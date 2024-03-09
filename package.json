@@ -17,9 +17,13 @@
     "lint": "eslint -c .eslintrc.js src; exit 0",
     "start": "webpack-dev-server --inline --d",
     "build": "NODE_ENV=production webpack --progress",
+    "build:win64": "set NODE_ENV=production &webpack --progress",
     "minify": "NODE_ENV=production MINIMIZE=true webpack --progress",
+    "minify:win64": "set NODE_ENV=production &set MINIMIZE=true &webpack --progress",
     "legacy": "NODE_ENV=production LEGACY=true webpack --progress",
+    "legacy:win64": "set NODE_ENV=production LEGACY=true &webpack --progress",
     "productionLegacy": "NODE_ENV=production MINIMIZE=true LEGACY=true webpack --progress",
+    "productionLegacy:win64": "set NODE_ENV=production &set MINIMIZE=true &set LEGACY=true &webpack --progress",
     "compile": "babel -d lib/ src/",
     "watch": "babel --watch -d lib/ src/",
     "prepare": "npm run compile && npm run build && npm run minify && npm run legacy && npm run productionLegacy"
