@@ -26,7 +26,7 @@
     "productionLegacy": "set NODE_ENV=production&set MINIMIZE=true&set LEGACY=true&webpack --progress",
     "compile": "babel -d lib/ src/",
     "watch": "babel --watch -d lib/ src/",
-    "prepare": "npm run compile && npm run build && npm run minify && npm run legacy && npm run productionLegacy"
+    "prepare": "set NODE_OPTIONS=--openssl-legacy-provider&npm run compile && npm run build && npm run minify && npm run legacy && npm run productionLegacy"
   },
   "author": "fchasen@gmail.com",
   "license": "BSD-2-Clause",
